@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const remember_meCheckbox = document.getElementById('remember_me');
     const emailError = document.getElementById('email_warning');
     const passwordError = document.getElementById('password_warning');
-
+    let emailChecked = false;
+    let passChecked = false;
     const saved = localStorage.getItem('remember_me');
     const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
     if (saved) {
@@ -19,41 +20,69 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = emailInput.value.trim();
       if (!/\S+@\S+\.\S+/.test(email) && email.length > 0) {
         emailError.textContent = 'Введите корректный email';
+        emailChecked = false;
       } else {
         emailError.textContent = '';
+        if(email.length != 0){
+            emailChecked = true;
+        }else{
+            emailChecked = false;
+        }
       }
+      
     }
     );
     passwordInput.addEventListener('input', () => {
       const password = passwordInput.value.trim();
       if (password.length < 6  && password.length > 0) {
         passwordError.textContent = 'Пароль должен содержать минимум 6 символов';
+        passChecked = false;
       } else {
         passwordError.textContent = '';
+        if(password.length != 0){
+            passChecked = true;
+        }else{
+            passChecked = false;
+        }
       }
     }
     );
 
-
-
-
-
     loginBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-  
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
+        e.preventDefault();
       
-      const checkPassword = accounts.some(account => account.email === email && account.password === password);
-        if (checkPassword) {
-            alert("Вы успешно вошли в систему");
-            window.location.href = 'index.html';
-            localStorage.setItem("is_auth", "true");
-        } else {
-            alert("Неверный email или пароль");
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+      
+        // Обновляем флаги вручную
+        emailChecked = /\S+@\S+\.\S+/.test(email);
+        passChecked = password.length >= 6;
+      
+        // Проверка перед входом
+        if (!emailChecked || !passChecked) {
+          alert("Заполните поля корректно перед входом");
+          return;
         }
       
-    });
+        const checkPassword = accounts.some(account => account.email === email && account.password === password);
+      
+        if (checkPassword) {
+          alert("Вы успешно вошли в систему");
+          localStorage.setItem("is_auth", "true");
+      
+          // Сохраняем "Remember me", если чекбокс активен
+          if (remember_meCheckbox.checked) {
+            localStorage.setItem('remember_me', JSON.stringify({ email, password }));
+          } else {
+            localStorage.removeItem('remember_me');
+          }
+      
+          window.location.href = 'index.html';
+        } else {
+          alert("Неверный email или пароль");
+        }
+      });
+      
 
 
     remember_meCheckbox.addEventListener('change', () => {
