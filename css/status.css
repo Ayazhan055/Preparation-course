@@ -26,8 +26,16 @@
     margin: 20px 0;
     text-transform: uppercase;
     cursor: pointer;
+    transition: all .3s;
 }
+.status_btn button:hover{
+    background-color: #ffffff69;
 
+}
+.status_btn button.active {
+    background-color: #3498db;
+    color: white;
+  }
 
 .status_title{
     font-size: 22px;

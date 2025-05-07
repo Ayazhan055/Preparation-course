@@ -15,6 +15,12 @@
     text-align: center;
 }
 
+.status_btn button.active {
+    background-color: #3498db;
+    color: white;
+  }
+  
+
 .buttons{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -30,6 +36,7 @@
     border-radius: 20px;
     font-size: 21px;
     cursor: pointer;
+    transition: all .3s;
 }
 
 
@@ -53,4 +60,6 @@
     margin-top: 70px;
     cursor: pointer;
 }
+
+
 
