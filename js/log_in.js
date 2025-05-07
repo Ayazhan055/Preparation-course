@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (checkPassword) {
             alert("Вы успешно вошли в систему");
             window.location.href = 'index.html';
+            localStorage.setItem("is_auth", "true");
         } else {
             alert("Неверный email или пароль");
         }
