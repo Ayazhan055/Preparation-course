@@ -1,0 +1,57 @@
+
+
+/* main */
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+.main_title{
+    font-size: 40px;
+    font-weight: 600;
+    width: 50%;
+    line-height: 2;
+    text-align: center;
+}
+
+.main_btn{
+    font-size: 21px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+.main_btn::after{
+    content:"";
+    width: 150px;
+    display: block;
+    height: 1px;
+    transition: all .3s;
+    background-color: #fff;
+}
+.main_btn::before{
+    content:"";
+    width: 150px;
+    display: block;
+    height: 1px;
+    transition: all .3s;
+    background-color: #fff;
+}
+
+.main_btn:hover::after{
+    width: 100px;
+}
+
+.main_btn:hover::before{
+    width: 100px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}

@@ -1,0 +1,120 @@
+
+/* log in */
+
+.log_in{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.log_title{
+    font-size: 22px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* input */
+
+.input_txt{
+    width: 400px;
+    border-radius: 18px;
+    border: none;
+    background-color: #D9D9D91A;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 18px;
+    outline: none;
+}
+
+.input_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* warning */
+
+.warning{
+    color: #ff0000;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    text-align: start;
+    height: 20px;
+}
+
+/* form */
+
+.log_form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* forgot */
+
+.log_forgot{
+    font-size: 21px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* main */
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+/* remember */
+
+.log_remember{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    opacity: .7;
+    gap: 10px;
+    font-size: 21px;
+}
+
+/* button */
+
+.log_btn button{
+    padding: 15px 30px;
+    width: 250px;
+    background-color: #D9D9D933;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 21px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+/* sign_up */
+
+.sign_up_link{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign_up_link a{
+    color: #fff;
+}
+.sign_up_link div{
+    opacity: .7;
+    font-size: 21px;
+}

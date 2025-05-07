@@ -1,0 +1,51 @@
+
+/* main */
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* status */
+.status{
+    text-align: center;
+}
+
+.status_btn button{
+    padding: 15px 30px;
+    width: 500px;
+    background-color: #D9D9D933;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 21px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.status_title{
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+
+.status_choose button{
+    padding: 10px 30px;
+    width: 250px;
+    background-color: #D9D9D933;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 18px;
+    margin: 20px 0;
+    margin-top: 70px;
+    cursor: pointer;
+}
+
