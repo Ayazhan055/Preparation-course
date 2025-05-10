@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const saved = localStorage.getItem('remember_me');
     const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
     if (saved) {
-    const data = JSON.parse(saved); // превращаем строку обратно в объект
+    const data = JSON.parse(saved); 
     emailInput.value = data.email || '';
     passwordInput.value = data.password || '';
     }
@@ -54,11 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
       
-        // Обновляем флаги вручную
         emailChecked = /\S+@\S+\.\S+/.test(email);
         passChecked = password.length >= 6;
       
-        // Проверка перед входом
         if (!emailChecked || !passChecked) {
           alert("Заполните поля корректно перед входом");
           return;
@@ -70,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
           alert("Вы успешно вошли в систему");
           localStorage.setItem("is_auth", "true");
       
-          // Сохраняем "Remember me", если чекбокс активен
           if (remember_meCheckbox.checked) {
             localStorage.setItem('remember_me', JSON.stringify({ email, password }));
           } else {

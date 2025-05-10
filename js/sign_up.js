@@ -54,12 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Этот email уже зарегистрирован");
       } else {
         const newAccount = { email, password };
-        accounts.push(newAccount);
-        localStorage.setItem('accounts', JSON.stringify(accounts));
+        localStorage.setItem('sign_up_account', JSON.stringify(newAccount));
         alert("Вы успешно зарегистрировались!");
   
         // Можно перенаправить пользователя сразу на логин:
-        window.location.href = 'log_in.html';
+        window.location.href = 'status.html';
       }
     });
   });

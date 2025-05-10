@@ -1,6 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const subjectButtons = document.querySelectorAll('.status_btn button');
     const chooseBtn = document.querySelector('.status_choose button');
+    const buttons = document.querySelector('.buttons');
+    buttons.innerHTML = ``;
+    subjects.forEach(button => {
+      buttons.innerHTML += `
+        <div class="status_btn" id='${button.id}'>
+          <button>${button.subject}</button>
+        </div>
+      `;
+    });
+
+
+    const subjectButtons = document.querySelectorAll('.status_btn button');
+
+
     let selectedSubject = null;
   
     subjectButtons.forEach(button => {
@@ -14,9 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     chooseBtn.addEventListener('click', () => {
       if (selectedSubject) {
         localStorage.setItem('selected_subject', selectedSubject);
-        alert(`Вы выбрали предмет: ${selectedSubject}`);
+        window.location.href = 'topics.html'; 
       } else {
-        alert('Пожалуйста, выберите предмет.');
       }
     });
   });
