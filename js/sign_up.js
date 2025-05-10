@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const accounts = JSON.parse(localStorage.getItem('accounts')) || [];
   
-    // Валидация email
     emailInput.addEventListener('input', () => {
       const email = emailInput.value.trim();
       if (!/\S+@\S+\.\S+/.test(email) && email.length > 0) {
@@ -21,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Валидация пароля
     passwordInput.addEventListener('input', () => {
       const password = passwordInput.value.trim();
       if (password.length < 6 && password.length > 0) {
@@ -33,14 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Обработка нажатия кнопки регистрации
     signUpBtn.addEventListener('click', (e) => {
       e.preventDefault();
   
       const email = emailInput.value.trim();
       const password = passwordInput.value.trim();
   
-      // Проверка полей
       emailChecked = /\S+@\S+\.\S+/.test(email);
       passChecked = password.length >= 6;
   
@@ -57,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('sign_up_account', JSON.stringify(newAccount));
         alert("Вы успешно зарегистрировались!");
   
-        // Можно перенаправить пользователя сразу на логин:
         window.location.href = 'status.html';
       }
     });

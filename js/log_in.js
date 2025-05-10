@@ -62,12 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
       
-        const checkPassword = accounts.some(account => account.email === email && account.password === password);
-      
+        const checkPassword = accounts.find(account => account.email === email && account.password === password);
+        
         if (checkPassword) {
-          alert("Вы успешно вошли в систему");
           localStorage.setItem("is_auth", "true");
-      
+          localStorage.setItem("token", checkPassword.token);
           if (remember_meCheckbox.checked) {
             localStorage.setItem('remember_me', JSON.stringify({ email, password }));
           } else {

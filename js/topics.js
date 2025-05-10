@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   const topicsContainer = document.querySelector('.topics_btns');
   const subject = localStorage.getItem('selected_subject');
-
+  const topic_btn = document.getElementById("title_btn");
   if (!subject || !topicsData[subject]) {
     topicsContainer.innerHTML = '<p>Топики не найдены для выбранного предмета.</p>';
     return;
   }
 
   topicsContainer.innerHTML = ''; 
+
+  topic_btn.addEventListener("click", () => {
+    window.location.href = "subjects.html";
+  });
 
   topicsData[subject].forEach(topic => {
     const div = document.createElement('div');
